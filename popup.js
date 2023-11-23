@@ -13,13 +13,16 @@ generateBtn.addEventListener("click", () => {
     loader.classList.remove("d-hide");
     chrome.storage.local.get(["API"], async function (result) {
       try {
+        let apiToken = result.API
+          ? result.API
+          : "bW7wpegbjeGgFArtPdj8ERAn2Oj3iD2jNWy5gqwx2UHCJiAb9zHWIkz0d0fq";
         const response = await fetch(url, {
           method: "POST",
           headers: headers,
           body: JSON.stringify({
             long_url: api.value,
             domain: "https://t.ly/",
-            api_token: result.API,
+            api_token: apiToken,
           }),
         });
 
@@ -32,7 +35,6 @@ generateBtn.addEventListener("click", () => {
         link.href = json.short_url;
         link.textContent = json.short_url;
         link.style.color = "green";
-
 
         toastSuccess.innerHTML = "";
         toastSuccess.appendChild(link);
@@ -48,5 +50,3 @@ generateBtn.addEventListener("click", () => {
     }, 1500);
   }
 });
-
-//bW7wpegbjeGgFArtPdj8ERAn2Oj3iD2jNWy5gqwx2UHCJiAb9zHWIkz0d0fq
