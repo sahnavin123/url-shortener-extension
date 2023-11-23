@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "URL-shortener",
+  "version": "1.0",
+  "description": "A Chrome extension to shorten URLs",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "logo.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "option_in_tab": false
+  },
+  "permissions": ["storage"]
+}
