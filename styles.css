@@ -76,17 +76,17 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-.d-hide {
+.hide {
     display: none;
 }
 
-.toast-error {
+.error {
     color: red;
     font-size: 0.8rem;
     margin-bottom: 0.8rem;
 }
 
-.toast-success {
+.success {
     color: green;
     margin-top: 0.5rem;
 }
